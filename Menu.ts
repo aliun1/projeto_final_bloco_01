@@ -1,113 +1,140 @@
-import readlinesync = require("readline-sync");
-import { ContaCorrente } from './src/model/ContaCorrente';
-import { ContaPoupanca } from './src/model/ContaPoupanca';
-import { colors } from './src/util/Colors';
+import * as readlinesync from 'readline-sync';
 
-export function main() {
+let escolha, escolhaCliente , escolhaVendedor: number;
 
-    let opcao: number;
+    do {
 
-    // Objeto da Classe ContaCorrente (Teste)
-    const contacorrente: ContaCorrente = new ContaCorrente(2, 123, 1, "Mariana", 15000, 1000);
-    contacorrente.visualizar();
-    contacorrente.sacar(2000);
-    contacorrente.visualizar();
-    contacorrente.depositar(1000);
-    contacorrente.visualizar();
-
-    // Objeto da Classe ContaPoupanca (teste)
-    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
-    contapoupanca.visualizar();
-    contapoupanca.sacar(200);
-    contapoupanca.visualizar();
-    contapoupanca.depositar(1000);
-    contapoupanca.visualizar();
-
-    while (true) {
-
-        console.log(colors.bg.black, colors.fg.yellow, 
-                    "*****************************************************");
+        console.log(colors.bg.black, colors.fg.yellow,
+            "*****************************************************");
         console.log("                                                     ");
-        console.log("                BANCO DO BRAZIL COM Z                ");
+        console.log("                JÓIAS DO BRASIL                 ");
         console.log("                                                     ");
         console.log("*****************************************************");
-        console.log("                                                     ");
-        console.log("            1 - Criar Conta                          ");
-        console.log("            2 - Listar todas as Contas               ");
-        console.log("            3 - Buscar Conta por Numero              ");
-        console.log("            4 - Atualizar Dados da Conta             ");
-        console.log("            5 - Apagar Conta                         ");
-        console.log("            6 - Sacar                                ");
-        console.log("            7 - Depositar                            ");
-        console.log("            8 - Transferir valores entre Contas      ");
-        console.log("            9 - Sair                                 ");
+        console.log("                                                     ");                        ");
+        console.log("            1 - Sou Cliente                          ");
+        console.log("            2 - Sou Vendedor                         ");
+        console.log("            0 - Sair                                 ");
         console.log("                                                     ");
         console.log("*****************************************************");
         console.log("                                                     ", colors.reset);
 
-        console.log("Entre com a opção desejada: ");
-        opcao = readlinesync.questionInt("");
-
-        if (opcao == 9) {
-            console.log(colors.fg.greenstrong, "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
-            sobre();
-            console.log(colors.reset, "");
-            process.exit(0);
-        }
-
-        switch (opcao) {
+        escolha = Number(readlinesync.question("Infome o numero de acordo com a opção desejada: "));
+        
+        switch (escolha) {
             case 1:
-                console.log(colors.fg.whitestrong, "\n\nCriar Conta\n\n", colors.reset);
-                
-                keyPress()
+            do {
+               console.clear();
+               console.log(colors.fg.pinkpastel,
+            "n\ESPACO DO VENDEDOR\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "1 - Cadastrar Produto\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "2 - Lista de Produtos\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "3 - Atualizar Produto\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "4 - Deletar Produto\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "0 - Voltar ao Menu Principal\n", colors.reset);
+               escolhaCliente = Number(readlinesync.question("Infome o numero de acordo com a opção desejada: "));
+
+            }
+            switch (escolhaVendedor) {
+                case 1:
+                    console.log(colors.fg.pinkpastel, "\nCadastrar Produto\n");
+                    const preco = Number(readlinesync.question("Valor do Produto: R$ "));
+                    const nome  = readlinesync.question("Nome do Produto: ");
+                    const quantidade = Number(readlinesync.question("Quantidade do Produto em estoque: ")) 
+            }
+                const novoProduto = new Produto(preco, nome, quantidade)
+                controller.criar(novoProduto);
+                console.log(colors.fg.greenstrong, "\nProduto cadastrado com sucesso!", colors.reset);
+                keyPress();
                 break;
+
             case 2:
-                console.log(colors.fg.whitestrong, "\n\nListar todas as Contas\n\n", colors.reset);
-
-                keyPress()
+                console.log("\n\Lista de Produtos:\n\n", colors.reset);
+                contas.listar();
+                keyPress();
                 break;
+            
             case 3:
-                console.log(colors.fg.whitestrong, "\n\nConsultar dados da Conta - por número\n\n", colors.reset);
-
-                keyPress()
+                console.log("\nAtualizar Produto\n");
+                controller.listar();
+                const idAtualizar = Number (readlinesync.question("Digite o ID do produto que deseja atualizar: "));
+                const precoAtualizado = Number(readlinesync.question("Novo valor do Produto: R$ "));
+                const quantidadeAtualizada = Number(readlinesync.question("Nova quantidade do Produto em estoque: "));
+                controller.atualizar(idAtualizar, precoAtualizado, quantidadeAtualizada);
+                console.log(colors.fg.greenstrong, "\nProduto atualizado com sucesso!", colors.reset);
+                keyPress();
                 break;
+
             case 4:
-                console.log(colors.fg.whitestrong, "\n\nAtualizar dados da Conta\n\n", colors.reset);
-
-                keyPress()
+                console.log("\nDeletar Produto\n");
+                controller.listar();
+                const idDeletar = Number (readlinesync.question("Digite o ID do produto que deseja deletar: "));
+                controller.remover(idDeletar);
+                console.log(colors.fg.greenstrong, "\nProduto deletado com sucesso!", colors.reset);
+                keyPress();
                 break;
-            case 5:
-                console.log(colors.fg.whitestrong, "\n\nApagar uma Conta\n\n", colors.reset);
 
-                keyPress()
-                break;
-            case 6:
-                console.log(colors.fg.whitestrong, "\n\nSaque\n\n", colors.reset);
+              case 0:
+            console.log("\nRetornar ao Menu");
+            break;
 
-                keyPress()
-                break;
-            case 7:
-                console.log(colors.fg.whitestrong, "\n\nDepósito\n\n", colors.reset);
+          default:
+            console.log("\nOpção inválida. Tente novamente mais tarde!");
+            break;
+        }
 
-                keyPress()
-                break;
-            case 8:
-                console.log(colors.fg.whitestrong, "\n\nTransferência entre Contas\n\n", colors.reset);
+        if (escolhaVendedor !== 0)
+          readlinesync.question("\nPressione ENTER para continuar...");
+      } while (escolhaVendedor !== 0);
+      break;
 
-                keyPress()
-                break;
-            default:
-                console.log(colors.fg.whitestrong, "\nOpção Inválida!\n", colors.reset);
 
-                keyPress()
+      case 2:
+        do {
+            console
+            console.clear();
+               console.log(colors.fg.pinkpastel,
+            "n\ESPACO DO CLIENTE\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "1 - Dados do Cliente\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "2 - Lista de Compras\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "4 - Efetuar uma Compra\n", colors.reset);
+               console.log(colors.fg.pinkpastel,
+            "0 - Voltar ao Menu Principal\n", colors.reset);
+               escolhaCliente = Number(readlinesync.question("Infome o numero de acordo com a opção desejada: "));
+        }
+
+        switch (escolhaCliente) {
+            case 1: 
+            const nomeCliente = readlinesync.question("Digite o nome do titular da compra:");
+            console.log("Seja Bem Vindo(a), " + nomeCliente + "!");
+            keyPress();
+            break;
+            
+            case 2:
+                console.log("\n\Lista de Compras:\n\n", colors.reset);
+                controller.listar();
+                keyPress();
                 break;
         }
-    }
+            case 3:
+            console.log("\nEfetuar uma Compra\n")
+            controller.listar();
+            const idCompra = Number (readlinesync.question("Digite o ID do produto que deseja comprar: "));
+            const quantidadeCompra = Number (readlinesync.question("Digite a quantidade que deseja comprar: "))
 
-}
+            controller.comprar(idCompra, quantidadeCompra);
+            console.log(colors.fg.greenstrong, "\nCompra realizada com sucesso!", colors.reset);
+            keyPress();
+            break;
 
 export function sobre(): void {
-
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: Aline Vieira");
     console.log("Generation Brasil - alinevieiraqq@gmail.com");
@@ -117,8 +144,7 @@ export function sobre(): void {
 
 function keyPress(): void {
     console.log(colors.reset, " ");
-    console.log("\nPressione enter para continuar...");
+
+    console.log("\nPressione ENTER para continuar...");
     readlinesync.prompt();
 }
-
-main();
