@@ -1,9 +1,8 @@
 import * as readlinesync from 'readline-sync';
+import { Produto } from './model/Produto';
+import { ProdutoController } from './controller/ProdutoController';
 import { colors } from './util/Colors';
-import { ProdutoController } from './src/controller/ProdutoController';
-import { Produto } from './src/model/Produto';
-// Importação para a função keyPress
-import { keyPress } from './util/KeyPress'; 
+import { keyPress } from './util/KeyPress';
 
 // Instancia o controlador (responsável por toda lógica dos produtos)
 const controller = new ProdutoController();
@@ -19,6 +18,8 @@ export function main() {
         console.log(colors.bg.black, colors.fg.yellow);
         console.log("                JÓIAS DO BRASIL                      ");
         console.log("               1 - Sou Vendedor                      ");
+
+
         console.log("               2 - Sou Cliente                       ");
         console.log("               0 - Sair                              ", colors.reset);
 
@@ -148,3 +149,4 @@ export function main() {
     } while (escolha !== 0); // fechamento do...while principal
 
 } // fechamento da funcao export function main()
+main();

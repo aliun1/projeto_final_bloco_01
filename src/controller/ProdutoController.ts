@@ -86,6 +86,6 @@ export class ProdutoController implements ProdutoRepository {
 
         // Atualiza o estoque após a compra
         produto.quantidade = produto.quantidade - quantidade;
-        console.log(`\nCompra realizada com sucesso! (${quantidade} unidades compradas)`);
+        console.log("\nCompra realizada com sucesso! (" + quantidade + " unidades compradas)");
     }
 }
