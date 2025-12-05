@@ -22,17 +22,17 @@ O sistema funciona através de um menu interativo no terminal, criado em TypeScr
 <p></p>npm
 
 <p></p> <b>▶️ Como executar</b>
-
+<p></p>
 git clone https://github.com/aliun1/projeto_final_bloco_01.git
-cd projeto_final_bloco_01
-npm install
-npm start
+<p></p>cd projeto_final_bloco_01
+<p></p>npm install
+<p></p>npm start
 
-Ou:
-
+<p></p>Ou:
+<p></p>
 npm run build
 node dist/Menu.js
-
+<p></p>
 <p></p><b>🎯 Objetivo de Aprendizagem</b>
 
 <p></p>Lógica de programação
