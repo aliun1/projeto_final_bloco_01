@@ -1,27 +1,27 @@
-Projeto Final – Bloco 01
-Bootcamp JavaScript • Generation Brasil
-
-Projeto desenvolvido no Bloco 01 do Bootcamp de JavaScript da Generation Brasil, com foco em lógica de programação, organização de código e uso inicial de Node.js + TypeScript.
-
-📌 Sobre o Projeto
+<b>Projeto Final: Bloco 01</b>
+<p>
+Bootcamp JavaScript Generation Brasil
+</p>
+Projeto desenvolvido no Bloco 01 do Bootcamp de JavaScript da Generation Brasil, com foco em lógica de programação, organização de código e uso inicial de Node.js + TypeScript <p>
+<p></p><b>📌 Sobre o Projeto</b>
 
 O sistema funciona através de um menu interativo no terminal, criado em TypeScript. A estrutura foi organizada para praticar modularização e boas práticas de desenvolvimento
 
-📁 Arquivos principais
+<p></p><b>📁 Arquivos principais</b>
 
-Menu.ts – Controla o menu e o fluxo da aplicação
-Colors.ts – Centraliza as cores usadas no terminal
-package.json – Dependências e scripts
-tsconfig.json – Configurações do TypeScript
-.gitignore – Arquivos ignorados pelo Git
+<p></p>Menu.ts – Controla o menu e o fluxo da aplicação
+<p></p>Colors.ts – Centraliza as cores usadas no terminal
+<p></p>package.json – Dependências e scripts
+<p></p>tsconfig.json – Configurações do TypeScript
+<p></p>.gitignore – Arquivos ignorados pelo Git
 
-🛠 Tecnologias
+<p></p><b>🛠 Tecnologias </b>
 
-Node.js
-TypeScript
-npm
+<p></p>Node.js
+<p></p>TypeScript
+<p></p>npm
 
-▶️ Como executar
+<p></p> <b>▶️ Como executar</b>
 
 git clone https://github.com/aliun1/projeto_final_bloco_01.git
 cd projeto_final_bloco_01
@@ -33,11 +33,9 @@ Ou:
 npm run build
 node dist/Menu.js
 
-🎯 Objetivo de Aprendizagem
+<p></p><b>🎯 Objetivo de Aprendizagem</b>
 
-Lógica de programação
-Modularização de código
-
-Interação no terminal
-
-Configuração inicial de projeto com TypeScript
+<p></p>Lógica de programação
+<p></p>Modularização de código
+<p></p>Interação no terminal<p></p>
+<p></p>Configuração inicial de projeto com TypeScript
