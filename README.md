@@ -111,4 +111,4 @@ node dist/Menu.js
 <ul>
   <li>Lógica de programação</li>
   <li>Modularização de código</li>
-  <li>Interação com o usuári
+  <li>Interação com o usuário.
